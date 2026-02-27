@@ -58,5 +58,12 @@ These are referenced directly in the configs or scripts:
 - The config assumes a sensible Wayland stack and may reference local paths. Update them if your layout differs.
 - Layer rules rely on namespaces from `hyprctl layers`. If effects don’t apply, verify the namespace names.
 
+## Screenshots
+Sample shots from `Simple/`:
+![Hyprland sample 1](Simple/2026-02-27-174617_hyprshot.png)
+![Hyprland sample 2](Simple/2026-02-27-174625_hyprshot.png)
+![Hyprland sample 3](Simple/2026-02-27-174802_hyprshot.png)
+![Hyprland sample 4](Simple/2026-02-27-174859_hyprshot.png)
+
 ## License
 Personal configuration; reuse and modify freely.
