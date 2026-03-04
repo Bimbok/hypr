@@ -65,6 +65,7 @@ These are referenced directly in the configs or scripts:
 
 - The config assumes a sensible Wayland stack and may reference local paths. Update them if your layout differs.
 - Layer rules rely on namespaces from `hyprctl layers`. If effects don’t apply, verify the namespace names.
+- [Waybar config repo](https://github.com/Bimbok/waybar.git)
 
 ## Screenshots
 
