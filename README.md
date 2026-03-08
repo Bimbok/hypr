@@ -75,7 +75,6 @@ Sample shots from `Simple/`:
 ![Hyprland sample 2](Simple/2026-03-04-184721_hyprshot.png)
 ![Hyprland sample 3](Simple/2026-03-04-184744_hyprshot.png)
 ![Hyprland sample 4](Simple/2026-03-04-184706_hyprshot.png)
-[Hyprland sample 5](Simple/2026-03-08-082216_hyprshot.png)
 
 ## License
 
