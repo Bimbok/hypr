@@ -66,6 +66,7 @@ These are referenced directly in the configs or scripts:
 - The config assumes a sensible Wayland stack and may reference local paths. Update them if your layout differs.
 - Layer rules rely on namespaces from `hyprctl layers`. If effects don’t apply, verify the namespace names.
 - [Waybar config repo](https://github.com/Bimbok/waybar.git)
+- [Wlogout config repo](https://github.com/Bimbok/wlogout.git)
 
 ## Screenshots
 
@@ -74,6 +75,7 @@ Sample shots from `Simple/`:
 ![Hyprland sample 2](Simple/2026-03-04-184721_hyprshot.png)
 ![Hyprland sample 3](Simple/2026-03-04-184744_hyprshot.png)
 ![Hyprland sample 4](Simple/2026-03-04-184706_hyprshot.png)
+[Hyprland sample 5](Simple/2026-03-08-082216_hyprshot.png)
 
 ## License
 
