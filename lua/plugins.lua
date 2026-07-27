@@ -8,6 +8,7 @@ local c = require("lua.colors")
 -- Hyprglass must already be loaded (for example via hyprpm reload) before this
 -- module is evaluated. The guard keeps config verification and plugin-less
 -- sessions safe while retaining every active Hyprglass setting.
+--
 if hl.plugin.hyprglass then
 	local hg = hl.plugin.hyprglass
 	hg.config({
@@ -31,8 +32,9 @@ if hl.plugin.hyprglass then
 		dark = { tint_color = tonumber(c.background), brightness = 1, contrast = 1.7, saturation = 1, vibrancy = 0.8 },
 	})
 	hg.layer("waybar", { preset = "liquid_glass", mask_threshold = 0.1 })
-	hg.layer("swaync", { preset = "liquid_glass", mask_threshold = 0.05 })
-	hg.layer("wlogout", { preset = "liquid_glass" })
+	hg.layer("swaync-control-center", { preset = "liquid_glass", mask_threshold = 0.5 })
+	hg.layer("wlogout", { preset = "liquid_glass", mask_threshold = 0.5 })
 	hg.layer("rofi", { preset = "liquid_glass" })
+	hg.layer("swayosd", { preset = "liquid_glass" })
 	hg.layer("debug-panel", { exclude = true })
 end
