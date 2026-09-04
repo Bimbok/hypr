@@ -8,8 +8,8 @@ hl.config({
 		border_size = 2,
 		-- The legacy alternatives remain commented in Modules/appearance.conf.
 		col = {
-			active_border = { colors = { c.primary, c.secondary }, angle = 45 },
-			inactive_border = c.outline_variant,
+			active_border = { colors = { c.primary, c.tertiary }, angle = 45 },
+			inactive_border = (c.outline_variant:gsub("^0xff", "0x33")),
 		},
 		resize_on_border = true,
 		allow_tearing = false,

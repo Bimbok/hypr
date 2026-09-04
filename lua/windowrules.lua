@@ -1,6 +1,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-hl.layer_rule({ blur = false, ignore_alpha = 0.5, match = { namespace = "wlogout" } })
+hl.layer_rule({ blur = false, ignore_alpha = 0.5, match = { namespace = "logout_dialog" }, animation = "fade" })
 hl.layer_rule({ blur = false, animation = "slide left", match = { namespace = "rofi" } })
 hl.layer_rule({
 	blur = false,
@@ -15,8 +15,8 @@ hl.layer_rule({
 	dim_around = false,
 	match = { namespace = "swaync-notification-window" },
 })
-hl.layer_rule({ blur = false, ignore_alpha = 0.5, match = { class = "swayosd" } })
-hl.layer_rule({ blur = false, match = { class = "waybar" } })
+hl.layer_rule({ blur = false, ignore_alpha = 0.5, match = { namespace = "swayosd" } })
+hl.layer_rule({ blur = false, match = { namespace = "waybar" } })
 
 hl.window_rule({ name = "rofi-float", match = { class = "^([Rr]ofi)$" }, float = true })
 hl.window_rule({ name = "rofi-pin", match = { class = "^([Rr]ofi)$" }, pin = true })
@@ -32,8 +32,52 @@ hl.window_rule({
 	match = { class = "^(discord)$" },
 	workspace = "special:magic",
 	float = true,
-	size = "1435 776",
-	move = "236 236",
+	size = "1200 700",
+	center = true,
+})
+
+hl.window_rule({
+	name = "localsend-float",
+	match = { class = "^(org.localsend.localsend_app)$" },
+	float = true,
+	size = "1200 700",
+})
+
+hl.window_rule({
+	name = "volume-float",
+	match = { class = "^(org.pulseaudio.pavucontrol)$" },
+	float = true,
+	size = "1200 700",
+})
+
+hl.window_rule({
+	name = "blueman-manager-float",
+	match = { class = "^(blueman-manager)$" },
+	float = true,
+	size = "1200 700",
+})
+
+hl.window_rule({
+	name = "quick-terminal-float",
+	match = { class = "kitty-float" },
+	float = true,
+	size = "1200 700",
+	center = true,
+})
+
+hl.window_rule({
+	name = "xdg-desktop-portal-gtk",
+	match = { class = "xdg-desktop-portal-gtk" },
+	float = true,
+	size = "1200 700",
+	center = true,
+})
+
+hl.window_rule({
+	name = "hyprland-share-picker",
+	match = { class = "hyprland-share-picker" },
+	size = "1200 700",
+	float = true,
 })
 
 -- Fix some dragging issues with XWayland

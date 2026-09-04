@@ -1,0 +1,1 @@
+/home/bimbok/.config/quickshell/styles/themes/monochrome/HyprTheme.lua

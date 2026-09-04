@@ -22,7 +22,7 @@ if hl.plugin.hyprglass then
 		blur_strength = 2.5,
 		blur_iterations = 3,
 		refraction_strength = 0.85,
-		edge_thickness = 0.08,
+		edge_thickness = 0.1,
 		chromatic_aberration = 0.8,
 		fresnel_strength = 0.9,
 		specular_strength = 0.95,
@@ -31,10 +31,33 @@ if hl.plugin.hyprglass then
 		vibrancy_darkness = 1,
 		dark = { tint_color = tonumber(c.background), brightness = 1, contrast = 1.7, saturation = 1, vibrancy = 0.8 },
 	})
+
 	hg.layer("waybar", { preset = "liquid_glass", mask_threshold = 0.1 })
 	hg.layer("swaync-control-center", { preset = "liquid_glass", mask_threshold = 0.5 })
-	hg.layer("wlogout", { preset = "liquid_glass", mask_threshold = 0.5 })
+	hg.layer("swaync-notification-window", { preset = "liquid_glass", mask_threshold = 0.5 })
+	hg.layer("logout_dialog", { preset = "liquid_glass", mask_threshold = 0.5 })
 	hg.layer("rofi", { preset = "liquid_glass" })
 	hg.layer("swayosd", { preset = "liquid_glass" })
-	hg.layer("debug-panel", { exclude = true })
+	hg.layer("debug-panel", { preset = "liquid_glass" })
 end
+
+-- .config/hypr/hyprland.lua
+hl.config({
+	plugin = {
+		scrolloverview = {
+			gesture_distance = 300, -- how far is the "max" for the gesture
+			scale = 0.5, -- preferred overview scale
+			workspace_gap = 30,
+			layout = "vertical", -- vertical or horizontal
+			wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
+			blur = false, -- blur only the main overview wallpaper
+
+			shadow = {
+				enabled = false,
+				range = 50,
+				render_power = 3,
+				color = 0xee1a1a1a,
+			},
+		},
+	},
+})
