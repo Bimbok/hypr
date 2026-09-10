@@ -21,15 +21,15 @@ if hl.plugin.hyprglass then
 		glass_opacity = 0.85,
 		blur_strength = 2.5,
 		blur_iterations = 3,
-		refraction_strength = 0.85,
-		edge_thickness = 0.1,
+		refraction_strength = 0.95,
+		edge_thickness = 0.3,
 		chromatic_aberration = 0.8,
 		fresnel_strength = 0.9,
 		specular_strength = 0.95,
 		lens_distortion = 0.9,
 		adaptive_boost = 0.1,
 		vibrancy_darkness = 1,
-		dark = { tint_color = tonumber(c.background), brightness = 1, contrast = 1.7, saturation = 1, vibrancy = 0.8 },
+		dark = { tint_color = tonumber(c.background), brightness = 1.2, contrast = 1.8, saturation = 1.3, vibrancy = 1 },
 	})
 
 	hg.layer("waybar", { preset = "liquid_glass", mask_threshold = 0.1 })
@@ -41,23 +41,24 @@ if hl.plugin.hyprglass then
 	hg.layer("debug-panel", { preset = "liquid_glass" })
 end
 
--- .config/hypr/hyprland.lua
-hl.config({
-	plugin = {
-		scrolloverview = {
-			gesture_distance = 300, -- how far is the "max" for the gesture
-			scale = 0.5, -- preferred overview scale
-			workspace_gap = 30,
-			layout = "vertical", -- vertical or horizontal
-			wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
-			blur = false, -- blur only the main overview wallpaper
-
-			shadow = {
-				enabled = false,
-				range = 50,
-				render_power = 3,
-				color = 0xee1a1a1a,
-			},
-		},
-	},
-})
+-- if hl.plugin.scrolloverview then
+-- 	hl.config({
+-- 		plugin = {
+-- 			scrolloverview = {
+-- 				gesture_distance = 300, -- how far is the "max" for the gesture
+-- 				scale = 0.5, -- preferred overview scale
+-- 				workspace_gap = 30,
+-- 				layout = "vertical", -- vertical or horizontal
+-- 				wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
+-- 				blur = false, -- blur only the main overview wallpaper
+--
+-- 				shadow = {
+-- 					enabled = false,
+-- 					range = 50,
+-- 					render_power = 3,
+-- 					color = 0xee1a1a1a,
+-- 				},
+-- 			},
+-- 		},
+-- 	})
+-- end

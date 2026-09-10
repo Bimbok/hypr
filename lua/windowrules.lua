@@ -32,7 +32,7 @@ hl.window_rule({
 	match = { class = "^(discord)$" },
 	workspace = "special:magic",
 	float = true,
-	size = "1200 700",
+	size = "1300 800",
 	center = true,
 })
 

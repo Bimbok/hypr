@@ -15,7 +15,8 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(
 	mainMod .. " + V",
 	hl.dsp.exec_cmd(
-		"cliphist list | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
+		-- "cliphist list | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
+		"~/.config/rofi/cliphist-img.sh | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
 	)
 )
 -- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call cliphist toggle"))
