@@ -12,17 +12,17 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(p.discord))
 
 -- If it's open, it toggles the scratchpad view.
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(
-	mainMod .. " + V",
-	hl.dsp.exec_cmd(
-		-- "cliphist list | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
-		"~/.config/rofi/cliphist-img.sh | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
-	)
-)
--- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call cliphist toggle"))
+-- hl.bind(
+-- 	-- 	mainMod .. " + V",
+-- 	hl.dsp.exec_cmd(
+-- 		-- "cliphist list | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
+-- 		"~/.config/rofi/cliphist-img.sh | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
+-- 	)
+-- )
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call cliphist toggle"))
 
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(p.menu))
--- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call appLauncher toggle"))
+-- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(p.menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call appLauncher toggle"))
 
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprctl dispatch layoutmsg promote")) -- scrolling
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- dwindle
@@ -58,52 +58,54 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
--- hl.bind(
--- 	"XF86AudioRaiseVolume",
--- 	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
--- 	{ locked = true, repeating = true }
--- )
--- hl.bind(
--- 	"XF86AudioLowerVolume",
--- 	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
--- 	{ locked = true, repeating = true }
--- )
--- hl.bind(
--- 	"XF86AudioMute",
--- 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
--- 	{ locked = true, repeating = true }
--- )
--- hl.bind(
--- 	"XF86AudioMicMute",
--- 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
--- 	{ locked = true, repeating = true }
--- )
 hl.bind(
 	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
+	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
-	{ locked = true, repeating = true }
-)
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"), { locked = true })
--- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
--- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
-
-hl.bind(
-	"XF86MonBrightnessUp",
-	hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
-	"XF86MonBrightnessDown",
-	hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
 
+-- hl.bind(
+-- 	"XF86AudioRaiseVolume",
+-- 	hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
+-- 	{ locked = true, repeating = true }
+-- )
+-- hl.bind(
+-- 	"XF86AudioLowerVolume",
+-- 	hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
+-- 	{ locked = true, repeating = true }
+-- )
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { locked = true })
+-- hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"), { locked = true })
+
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+
+-- hl.bind(
+-- 	"XF86MonBrightnessUp",
+-- 	hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+-- 	{ locked = true, repeating = true }
+-- )
+-- hl.bind(
+-- 	"XF86MonBrightnessDown",
+-- 	hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+-- 	{ locked = true, repeating = true }
+-- )
+--
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
@@ -121,8 +123,8 @@ hl.bind(mainMod .. "+ SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/P
 hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Notification Center
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("swaync-client -t -sw"))
--- hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call controlCenter toggle"))
+-- hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call controlCenter toggle"))
 
 -- hyprexpo
 -- Cycle forward through windows
@@ -131,9 +133,9 @@ hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
 hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ prev = true }))
 
 -- hyprland.lua
-hl.bind("SUPER + w", function()
-	hl.plugin.scrolloverview.overview("toggle all")
-end)
+-- hl.bind("SUPER + w", function()
+-- 	hl.plugin.scrolloverview.overview("toggle all")
+-- end)
 
 -- gsr
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("gsr toggle"))
@@ -150,5 +152,6 @@ hl.bind("ALT + W", hl.dsp.exec_cmd("localsend"))
 
 hl.bind("ALT + Q", hl.dsp.exec_cmd("kitty --class kitty-float"))
 
--- hl.bind(mainMod .. "+ SHIFT + W", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call wallpaperSwitcher toggle"))
--- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call miniDashboard toggle"))
+hl.bind(mainMod .. "+ W", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call wallpaperSwitcher toggle"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call miniDashboard toggle"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call powerMenu toggle"))
