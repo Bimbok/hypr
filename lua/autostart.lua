@@ -8,7 +8,7 @@ local p = require("lua.settings").programs
 -- hl.on("hyprland.start", function() hl.exec_cmd("hyprpm reload -n") end)
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpm reload -n")
-	hl.exec_cmd("chillpill-shell")
+	-- hl.exec_cmd("chillpill-shell")
 	hl.exec_cmd(
 		"wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store & awww-daemon & hypridle"
 	)

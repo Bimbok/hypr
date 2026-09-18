@@ -19,10 +19,20 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 -- 		"~/.config/rofi/cliphist-img.sh | rofi -dmenu -theme ~/.config/rofi/config-cliphist.rasi | cliphist decode | wl-copy"
 -- 	)
 -- )
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call cliphist toggle"))
+-- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call cliphist toggle"))
+hl.bind(
+	mainMod .. " + V",
+	hl.dsp.exec_cmd("quickshell ipc --any-display -p /usr/share/tide-island call tide toggleClipboard")
+)
 
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(p.menu))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call appLauncher toggle"))
+-- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call appLauncher toggle"))
+hl.bind(
+	"SUPER + R",
+	hl.dsp.exec_cmd(
+		"/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleApplicationLauncher"
+	)
+)
 
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprctl dispatch layoutmsg promote")) -- scrolling
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- dwindle
@@ -124,7 +134,21 @@ hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Notification Center
 -- hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("swaync-client -t -sw"))
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call controlCenter toggle"))
+-- hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call controlCenter toggle"))
+hl.bind(
+	"SUPER + X",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleControlCenter")
+)
+hl.bind(
+	"SUPER + N",
+	hl.dsp.exec_cmd(
+		"/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleNotificationCenter"
+	)
+)
+hl.bind(
+	"SUPER + J",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide togglePlayer")
+)
 
 -- hyprexpo
 -- Cycle forward through windows
@@ -152,6 +176,49 @@ hl.bind("ALT + W", hl.dsp.exec_cmd("localsend"))
 
 hl.bind("ALT + Q", hl.dsp.exec_cmd("kitty --class kitty-float"))
 
-hl.bind(mainMod .. "+ W", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call wallpaperSwitcher toggle"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call miniDashboard toggle"))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call powerMenu toggle"))
+-- hl.bind(mainMod .. "+ W", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call wallpaperSwitcher toggle"))
+hl.bind(
+	"SUPER + W",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleWallpaperPicker")
+)
+
+-- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call miniDashboard toggle"))
+-- hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call powerMenu toggle"))
+hl.bind(
+	"SUPER + Escape",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide togglePowerMenu")
+)
+
+-- tide-island
+hl.bind(
+	"SUPER + Tab",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call overview toggle")
+)
+hl.bind(
+	"SUPER + Right",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide swipeRight")
+)
+hl.bind(
+	"SUPER + Left",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide swipeLeft")
+)
+hl.bind(
+	"SUPER + Down",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide showClock")
+)
+hl.bind(
+	"SUPER + T",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide showTimer")
+)
+hl.bind(
+	"SUPER + O",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleFileShelf")
+)
+hl.bind(
+	"SUPER + F",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call island toggle")
+)
+hl.bind(
+	"SUPER + H",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleWeather")
+)
