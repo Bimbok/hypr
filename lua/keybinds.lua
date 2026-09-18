@@ -183,6 +183,10 @@ hl.bind(
 )
 
 -- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call miniDashboard toggle"))
+hl.bind(
+	"SUPER + B",
+	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleWeather")
+)
 -- hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("qs ipc -p /usr/share/chillpill-shell call powerMenu toggle"))
 hl.bind(
 	"SUPER + Escape",
@@ -217,8 +221,4 @@ hl.bind(
 hl.bind(
 	"SUPER + F",
 	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call island toggle")
-)
-hl.bind(
-	"SUPER + H",
-	hl.dsp.exec_cmd("/usr/bin/quickshell ipc --any-display -p /usr/share/tide-island call tide toggleWeather")
 )
